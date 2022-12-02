@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="clinicaesteticaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'clinicaestetica.dbo.AgendarCliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AgendarCliente">
+          <Key>
+            <PropertyRef Name="IdAgendamento" />
+            <PropertyRef Name="Nome do Cliente" />
+            <PropertyRef Name="Tipo de Procedimento" />
+            <PropertyRef Name="Data da Realizacao" />
+            <PropertyRef Name="Valor do procedimento" />
+          </Key>
+          <Property Name="IdAgendamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome do Cliente" Type="varchar(max)" Nullable="false" />
+          <Property Name="Tipo de Procedimento" Type="varchar(max)" Nullable="false" />
+          <Property Name="Data da Realizacao" Type="datetime" Nullable="false" />
+          <Property Name="Valor do procedimento" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="clinicaesteticaModelStoreContainer">
+          <EntitySet Name="AgendarCliente" EntityType="Self.AgendarCliente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AgendarCliente].[IdAgendamento] AS [IdAgendamento], 
+    [AgendarCliente].[Nome do Cliente] AS [Nome do Cliente], 
+    [AgendarCliente].[Tipo de Procedimento] AS [Tipo de Procedimento], 
+    [AgendarCliente].[Data da Realizacao] AS [Data da Realizacao], 
+    [AgendarCliente].[Valor do procedimento] AS [Valor do procedimento]
+    FROM [dbo].[AgendarCliente] AS [AgendarCliente]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="clinicaesteticaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AgendarCliente">
+          <Key>
+            <PropertyRef Name="IdAgendamento" />
+            <PropertyRef Name="Nome_do_Cliente" />
+            <PropertyRef Name="Tipo_de_Procedimento" />
+            <PropertyRef Name="Data_da_Realizacao" />
+            <PropertyRef Name="Valor_do_procedimento" />
+          </Key>
+          <Property Name="IdAgendamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_do_Cliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_de_Procedimento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Data_da_Realizacao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Valor_do_procedimento" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="clinicaesteticaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgendarCliente" EntityType="Self.AgendarCliente" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="clinicaesteticaModelStoreContainer" CdmEntityContainer="clinicaesteticaEntities">
+          <EntitySetMapping Name="AgendarCliente">
+            <EntityTypeMapping TypeName="clinicaesteticaModel.AgendarCliente">
+              <MappingFragment StoreEntitySet="AgendarCliente">
+                <ScalarProperty Name="IdAgendamento" ColumnName="IdAgendamento" />
+                <ScalarProperty Name="Nome_do_Cliente" ColumnName="Nome do Cliente" />
+                <ScalarProperty Name="Tipo_de_Procedimento" ColumnName="Tipo de Procedimento" />
+                <ScalarProperty Name="Data_da_Realizacao" ColumnName="Data da Realizacao" />
+                <ScalarProperty Name="Valor_do_procedimento" ColumnName="Valor do procedimento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

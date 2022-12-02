@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<style>
+    .input1 {
+        margin-left: 10px;
+        width:170px;
+    }
+    body {
+        background-image: url('../../imagens/telalogin.png');
+        background-size: cover;
+        overflow: hidden;
+    }
+    .login{
+        margin-left:35%;
+        margin-top:23%;
+    }
+    .login button {
+        margin-top: 1%;
+    }
+   .login .input2 {
+            margin-top: 1%;
+    }
+
+</style>
+
+
+
+
+<div class="login">
+    <h2>Login</h2>
+    <label>Usuário&nbsp;<input class="input1" type="text" id="User" name="Name" /></label>
+    <br/>
+    <label>Senha&nbsp;<input class="input2" style="margin-left:22px; margin-bottom:30px;" type="password" id="User" name="Name" /></label>
+    <br/>
+    @Html.ActionLink("Entrar", "Index", "Home", new { area = "" }, new { @style="color:black; text-decoration:none;" })
+</div>

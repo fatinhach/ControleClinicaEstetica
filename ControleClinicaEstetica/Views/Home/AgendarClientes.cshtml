@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AgendarClientes";
+}
+
+
+<style>
+    .login {
+        margin-bottom:20%;
+    }
+</style>
+<h2>Agendar Clientes</h2>
+<div class="login">
+    <label>Nome do Cliente:&nbsp;<input class="input1" style="margin-left:41px" type="text" id="User" name="Name" /></label>
+    <br />
+    <label>Tipo de Procedimento&nbsp;<input class="input2" style="margin-left:9px" type="password" id="User" name="Name" /></label>
+    <br />
+    <label>Data da Realização&nbsp;<input class="input2" style="margin-left:30px" type="date" id="User" name="Name" /></label>
+    <br />
+    <label>Valor do Procedimento &nbsp;<input class="input2" style="margin-left:0px; margin-bottom:35px;" type="password" id="User" name="Name" /></label>
+    <br />
+    @Html.ActionLink("Agendar Cliente", "Index", "Home", new { area = "" }, new { @style = "color:black;" })
+</div>

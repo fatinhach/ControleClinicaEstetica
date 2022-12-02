@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ControleClinicaEstetica.Models.AgendarClientes>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "AgendaDiaria";
+}
+<link href="~/Content/Gridmvc.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/gridmvc.min.js"></script>
+
+<h2>Agenda do dia </h2>
+<h5>Data: 01/12/2022</h5>
+
+<div class="code-cut" style="margin-bottom:9%">
+    @Html.Grid(Model).Columns(Columns =>
+{
+    Columns.Add(c => c.IdAgendamento).Titled("Número do Agendamento").Filterable(true);
+    Columns.Add(c => c.Nome_do_Cliente).Titled("Nome do Cliente").Filterable(true);
+    Columns.Add(c => c.Tipo_de_Procedimento).Titled("Tipo de Procedimento").Filterable(true);
+    Columns.Add(c => c.Data_da_Realizacao).Titled("Data da Realizacao").Filterable(true);
+    Columns.Add(c => c.Valor_do_procedimento).Titled("Valor do Procedimento").Filterable(true);
+    Columns.Add()
+          .Encoded(false)
+          .Sanitized(false)
+          .SetWidth(30)
+          .RenderValueAs(c => Html.ActionLink("Edit", "Edit", new { id = c.IdAgendamento }));
+}).WithPaging(10).Sortable(true)
+
+</div>
+

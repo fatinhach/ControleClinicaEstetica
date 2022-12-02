@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "CadastrarProcedimentos";
+}
+<style>
+    .titulo{
+        margin-top:3%;
+    }
+    .procedimento {
+        margin-top: 3%;
+        margin-bottom:15%;
+    }
+</style>
+<h2 class="titulo">Cadastrar Novos Procedimentos</h2>
+<div class="procedimento">
+    <label>Tipo do Procedimento&nbsp;<input class="input1" style="margin-left:22px" type="text" id="User" name="Name" /></label>
+    <br />
+    <label>Valor do Procedimento&nbsp;<input class="input2" style="margin-left:17px" type="password" id="User" name="Name" /></label>
+    <br />
+    <label>Data de Inserção&nbsp;<input class="input2" style="margin-left:62px" type="date" id="User" name="Name" /></label>
+    <br />
+    <label>Usuario &nbsp;<input class="input2" style="margin-left:114px; margin-bottom:15%;" type="password" id="User" name="Name" /></label>
+    <br />
+    @Html.ActionLink("Cadastrar Procedimentos", "Index", "Home", new { area = "" }, new { @style = "color:black;" })
+</div>

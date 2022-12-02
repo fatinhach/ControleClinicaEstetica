@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "CadastrarClientes";
+}
+<style>
+    .login{
+        margin-top:3%;
+        margin-bottom:10%;
+    }
+    .titulo {
+        margin-top: 3%;
+    }
+</style>
+<h2 class="titulo">Cadastrar Novos Clientes</h2>
+<div class="login">
+    <label>Nome do Cliente&nbsp;<input class="input1" style="margin-left:22px" type="text" id="User" name="Name" /></label>
+    <br />
+    <label>CPF&nbsp;<input class="input2" style="margin-left:105px" type="password" id="User" name="Name" /></label>
+    <br />
+    <label>E-mail&nbsp;<input class="input2" style="margin-left:90px" type="password" id="User" name="Name" /></label>
+    <br />
+    <label>Telefone&nbsp;<input class="input2" style="margin-left:76px" type="password" id="User" name="Name" /></label>
+    <br />
+    <label>Telefone Recado&nbsp;<input class="input2" style="margin-left:22px" type="password" id="User" name="Name" /></label>
+    <br /> 
+    <label>Endereço&nbsp;<input class="input2" style="margin-left:71px; margin-bottom:15%;" type="password" id="User" name="Name" /></label>
+    <br />
+    @Html.ActionLink("Cadastrar Cliente", "Index", "Home", new { area = "" }, new { @style = "color:black;" })
+</div>
+
+

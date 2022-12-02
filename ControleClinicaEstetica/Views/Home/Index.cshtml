@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .nameMenu {
+        margin-top: 3%;
+    }
+    .menu{
+        list-style:none;
+        padding:0px;
+        margin-bottom:24%;
+       
+    }
+    .menu .link{
+        padding-top:1%;
+    }
+    body {
+        overflow: hidden;
+    }
+</style>
+
+<div>
+    <label class="nameMenu">Menu</label>
+    <ul class="menu">
+        <li class="link">@Html.ActionLink("Cadastrar Clientes", "CadastrarClientes", "Home", new { area = "" }, new { @style = "color:black;" })</li>
+        <li class="link">@Html.ActionLink("Cadastrar Procedimento", "CadastrarProcedimentos", "Home", new { area = "" }, new { @style = "color:black;" })</li>
+        <li class="link">@Html.ActionLink("Agendar Cliente", "AgendarClientes", "Home", new { area = "" }, new { @style = "color:black;" })</li>
+        <li class="link">@Html.ActionLink("Clientes Agendados Hoje", "AgendaDiaria", "Home", new { area = "" }, new { @style = "color:black;" })</li>
+    </ul>
+</div>
